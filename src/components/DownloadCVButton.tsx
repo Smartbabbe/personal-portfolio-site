@@ -23,8 +23,8 @@ export default function DownloadCVButton({
       filename: "Esther-Okon-Web3-CV.pdf"
     },
     va: {
-      path: "/cv/esther-va-cv.pdf",
-      filename: "Esther-Okon-VA-CV.pdf"
+      path: "/VA/cv/General-VA.pdf",
+      filename: "Esther-Okon-CV.pdf"
     },
     dev: {
       path: "/cv/esther-dev-cv.pdf",

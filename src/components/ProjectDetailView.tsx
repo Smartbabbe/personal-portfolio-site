@@ -1,4 +1,5 @@
-import { FileText, Database, BarChart2, Calendar } from "lucide-react";
+import { useEffect } from "react";
+import { FileText, Database, BarChart2, Calendar, ExternalLink } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 import ContactSection from "./ContactSection";
 import type { FeaturedProject, ProjectVisual } from "../data/vaPortfolioData";
@@ -6,6 +7,7 @@ import type { FeaturedProject, ProjectVisual } from "../data/vaPortfolioData";
 interface ProjectDetailViewProps {
   project: FeaturedProject;
   onBack: () => void;
+  onContact: () => void;
 }
 
 const iconMap: Record<ProjectVisual["icon"], React.ElementType> = {
@@ -15,9 +17,17 @@ const iconMap: Record<ProjectVisual["icon"], React.ElementType> = {
   calendar: Calendar,
 };
 
-export default function ProjectDetailView({ project, onBack }: ProjectDetailViewProps) {
+export default function ProjectDetailView({
+  project,
+  onBack,
+  onContact,
+}: ProjectDetailViewProps) {
   const { theme } = useTheme();
   const dark = theme === "dark";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div
@@ -32,20 +42,25 @@ export default function ProjectDetailView({ project, onBack }: ProjectDetailView
         <button
           onClick={onBack}
           className={`mb-8 font-medium transition-colors ${
-            dark ? "text-purple-400 hover:text-purple-300" : "text-purple-600 hover:text-purple-700"
+            dark
+              ? "text-purple-400 hover:text-purple-300"
+              : "text-purple-600 hover:text-purple-700"
           }`}
         >
           ← Back to Portfolio
         </button>
 
         <div className="space-y-12">
-
           {/* Title & description */}
           <div>
-            <h1 className={`text-4xl md:text-5xl font-bold mb-4 ${dark ? "text-white" : "text-gray-900"}`}>
+            <h1
+              className={`text-4xl md:text-5xl font-bold mb-4 ${dark ? "text-white" : "text-gray-900"}`}
+            >
               {project.title}
             </h1>
-            <p className={`text-xl ${dark ? "text-gray-400" : "text-gray-600"}`}>
+            <p
+              className={`text-xl ${dark ? "text-gray-400" : "text-gray-600"}`}
+            >
               {project.description}
             </p>
           </div>
@@ -54,22 +69,32 @@ export default function ProjectDetailView({ project, onBack }: ProjectDetailView
           {[
             { heading: "The Problem", body: project.problem, list: null },
             { heading: "What I Did", body: null, list: project.whatIDid },
-            { heading: "Outcome / Value Delivered", body: project.outcome, list: null },
+            {
+              heading: "Outcome / Value Delivered",
+              body: project.outcome,
+              list: null,
+            },
           ].map(({ heading, body, list }) => (
             <div
               key={heading}
               className={`p-8 rounded-xl shadow-xl ${dark ? "bg-gray-800/50" : "bg-white"}`}
             >
-              <h2 className={`text-2xl font-bold mb-4 ${dark ? "text-white" : "text-gray-900"}`}>
+              <h2
+                className={`text-2xl font-bold mb-4 ${dark ? "text-white" : "text-gray-900"}`}
+              >
                 {heading}
               </h2>
               {body && (
-                <p className={`leading-relaxed ${dark ? "text-gray-300" : "text-gray-700"}`}>
+                <p
+                  className={`leading-relaxed ${dark ? "text-gray-300" : "text-gray-700"}`}
+                >
                   {body}
                 </p>
               )}
               {list && (
-                <ul className={`space-y-3 ${dark ? "text-gray-300" : "text-gray-700"}`}>
+                <ul
+                  className={`space-y-3 ${dark ? "text-gray-300" : "text-gray-700"}`}
+                >
                   {list.map((item: string) => (
                     <li key={item} className="flex items-start gap-3">
                       <span className="text-purple-500 mt-1">•</span>
@@ -82,8 +107,12 @@ export default function ProjectDetailView({ project, onBack }: ProjectDetailView
           ))}
 
           {/* Tools Used */}
-          <div className={`p-8 rounded-xl shadow-xl ${dark ? "bg-gray-800/50" : "bg-white"}`}>
-            <h2 className={`text-2xl font-bold mb-4 ${dark ? "text-white" : "text-gray-900"}`}>
+          <div
+            className={`p-8 rounded-xl shadow-xl ${dark ? "bg-gray-800/50" : "bg-white"}`}
+          >
+            <h2
+              className={`text-2xl font-bold mb-4 ${dark ? "text-white" : "text-gray-900"}`}
+            >
               Tools Used
             </h2>
             <div className="flex flex-wrap gap-3">
@@ -91,7 +120,9 @@ export default function ProjectDetailView({ project, onBack }: ProjectDetailView
                 <span
                   key={tool}
                   className={`px-4 py-2 rounded-full font-medium ${
-                    dark ? "bg-purple-900/50 text-purple-300" : "bg-purple-100 text-purple-700"
+                    dark
+                      ? "bg-purple-900/50 text-purple-300"
+                      : "bg-purple-100 text-purple-700"
                   }`}
                 >
                   {tool}
@@ -101,8 +132,12 @@ export default function ProjectDetailView({ project, onBack }: ProjectDetailView
           </div>
 
           {/* Skills Demonstrated */}
-          <div className={`p-8 rounded-xl shadow-xl ${dark ? "bg-gray-800/50" : "bg-white"}`}>
-            <h2 className={`text-2xl font-bold mb-4 ${dark ? "text-white" : "text-gray-900"}`}>
+          <div
+            className={`p-8 rounded-xl shadow-xl ${dark ? "bg-gray-800/50" : "bg-white"}`}
+          >
+            <h2
+              className={`text-2xl font-bold mb-4 ${dark ? "text-white" : "text-gray-900"}`}
+            >
               Skills Demonstrated
             </h2>
             <div className="flex flex-wrap gap-3">
@@ -122,8 +157,12 @@ export default function ProjectDetailView({ project, onBack }: ProjectDetailView
           </div>
 
           {/* Visual Samples */}
-          <div className={`p-8 rounded-xl shadow-xl ${dark ? "bg-gray-800/50" : "bg-white"}`}>
-            <h2 className={`text-2xl font-bold mb-6 ${dark ? "text-white" : "text-gray-900"}`}>
+          <div
+            className={`p-8 rounded-xl shadow-xl ${dark ? "bg-gray-800/50" : "bg-white"}`}
+          >
+            <h2
+              className={`text-2xl font-bold mb-6 ${dark ? "text-white" : "text-gray-900"}`}
+            >
               Visual Samples
             </h2>
             <div className="space-y-6">
@@ -132,14 +171,30 @@ export default function ProjectDetailView({ project, onBack }: ProjectDetailView
                 return (
                   <div
                     key={visual.caption}
-                    className={`p-6 rounded-lg border-2 border-dashed ${
-                      dark ? "bg-gray-700/50 border-gray-600" : "bg-gray-100 border-gray-300"
+                    className={`rounded-lg overflow-hidden border-2 ${
+                      dark ? "border-gray-600" : "border-gray-200"
                     }`}
                   >
-                    <div className="aspect-video flex items-center justify-center">
-                      <Icon className={`w-16 h-16 ${dark ? "text-gray-600" : "text-gray-400"}`} />
-                    </div>
-                    <p className={`text-center mt-4 text-sm ${dark ? "text-gray-400" : "text-gray-600"}`}>
+                    {visual.image ? (
+                      <img
+                        src={visual.image}
+                        alt={visual.caption}
+                        className="w-full object-cover"
+                      />
+                    ) : (
+                      <div
+                        className={`p-6 ${dark ? "bg-gray-700/50" : "bg-gray-100"}`}
+                      >
+                        <div className="aspect-video flex items-center justify-center">
+                          <Icon
+                            className={`w-16 h-16 ${dark ? "text-gray-600" : "text-gray-400"}`}
+                          />
+                        </div>
+                      </div>
+                    )}
+                    <p
+                      className={`text-center py-3 px-4 text-sm ${dark ? "text-gray-400" : "text-gray-600"}`}
+                    >
                       {visual.caption}
                     </p>
                   </div>
@@ -148,25 +203,45 @@ export default function ProjectDetailView({ project, onBack }: ProjectDetailView
             </div>
           </div>
 
+          {/* View Full Document — only shown when a live link exists */}
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-4 rounded-lg font-semibold text-sm transition-all duration-300 hover:scale-105 bg-purple-600 hover:bg-purple-700 text-white shadow-lg"
+            >
+              <ExternalLink className="w-4 h-4" />
+              View Full Document
+            </a>
+          )}
+
           {/* Confidentiality */}
           <div
             className={`p-6 rounded-xl border-2 ${
-              dark ? "bg-yellow-900/20 border-yellow-700/50" : "bg-yellow-50 border-yellow-200"
+              dark
+                ? "bg-yellow-900/20 border-yellow-700/50"
+                : "bg-yellow-50 border-yellow-200"
             }`}
           >
-            <p className={`font-medium ${dark ? "text-yellow-300" : "text-yellow-800"}`}>
-              Confidentiality Note: All data and visuals shown have been anonymized or recreated
-              using mock information to respect client confidentiality.
+            <p
+              className={`font-medium ${dark ? "text-yellow-300" : "text-yellow-800"}`}
+            >
+              Confidentiality Note: All data and visuals shown have been
+              anonymized or recreated using mock information to respect client
+              confidentiality.
             </p>
           </div>
 
           {/* CTA */}
           <div className="text-center">
-            <button className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg">
+            <button
+              onClick={onContact}
+              className="px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+            >
               {project.ctaLabel}
             </button>
           </div>
-
         </div>
       </div>
       <ContactSection />

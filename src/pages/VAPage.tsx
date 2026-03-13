@@ -3,13 +3,17 @@ import { ArrowLeft, ChevronDown } from "lucide-react";
 import ContactSection from "../components/ContactSection";
 import { useState, useEffect } from "react";
 import SectionHeader from "../components/SectionHeader";
-import VaServices from "../components/vaServices";
-import { services } from "../data/portfolioData";
+import VaServices from "../components/VA/vaServices";
+import { services } from "../data/VA/portfolioData";
 import DownloadCVButton from "../components/DownloadCVButton";
 import { Resume } from "../components/Resume";
-import VAPortfolioSection from "../components/VAPortfolioSection";
+import VAPortfolioSection from "../components/VA/VAPortfolioSection";
 import ProjectDetailView from "../components/ProjectDetailView";
-import { portfolioCategories } from "../data/vaPortfolioData";
+import { portfolioCategories } from "../data/VA/vaPortfolioData";
+import girl from "../../public/VA/girl-in-front-of-laptop.webp";
+import workingspace from "../../public/VA/working-space.webp"; 
+import spreedsheet from "../../public/VA/spreedsheet.webp";
+import professionalworkspace from "../../public/VA/professional-wokspace.webp";
 
 interface VAPageProps {
   onNavigate: (page: string) => void;
@@ -24,29 +28,31 @@ interface CarouselImage {
 const carouselImages: CarouselImage[] = [
   {
     id: 1,
-    url: "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    url: girl,
     alt: "Remote workspace setup",
   },
   {
     id: 2,
-    url: "https://images.pexels.com/photos/5797903/pexels-photo-5797903.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    url: workingspace,
     alt: "Calendar and scheduling interface",
   },
   {
     id: 3,
-    url: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    url: spreedsheet,
     alt: "Spreadsheet and dashboard workspace",
   },
   {
     id: 4,
-    url: "https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    url: professionalworkspace,
     alt: "Professional administrative workspace",
   },
 ];
 
 export default function VAPage({ onNavigate }: VAPageProps) {
   const { theme } = useTheme();
-  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
+    null,
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -59,23 +65,37 @@ export default function VAPage({ onNavigate }: VAPageProps) {
   }, [isPaused]);
 
   const scrollToPortfolio = () => {
-    document.getElementById("portfolio-section")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("portfolio-section")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   // Find the featured project matching the selected ID across all categories
   const selectedProject = selectedProjectId
-    ? portfolioCategories.find((c) => c.featured.id === selectedProjectId)?.featured ?? null
+    ? (portfolioCategories.find((c) => c.featured.id === selectedProjectId)
+        ?.featured ?? null)
     : null;
 
   // If a project is selected, render its detail page
-  if (selectedProject) {
-    return (
-      <ProjectDetailView
-        project={selectedProject}
-        onBack={() => setSelectedProjectId(null)}
-      />
-    );
-  }
+if (selectedProject) {
+  return (
+    <ProjectDetailView
+      project={selectedProject}
+      onBack={() => {
+        setSelectedProjectId(null);
+        setTimeout(() => {
+          document.getElementById("portfolio-section")?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }}
+      onContact={() => {
+        setSelectedProjectId(null);
+        setTimeout(() => {
+          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }}
+    />
+  );
+}
 
   return (
     <div
@@ -97,7 +117,11 @@ export default function VAPage({ onNavigate }: VAPageProps) {
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              <img src={image.url} alt={image.alt} className="w-full h-full object-cover" />
+              <img
+                src={image.url}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/30" />
             </div>
           ))}
@@ -114,16 +138,20 @@ export default function VAPage({ onNavigate }: VAPageProps) {
 
           <div className="flex-1 flex flex-col items-center justify-center text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white animate-fade-in">
-              <span className={theme === "dark" ? "text-emerald-200" : "text-red-200"}>
+              <span
+                className={
+                  theme === "dark" ? "text-emerald-200" : "text-red-200"
+                }
+              >
                 Esther Okon
               </span>{" "}
-              <br />
-              A Tech-Savvy Research &amp; Administrative Virtual Assistant
+              <br />A Tech-Savvy Research &amp; Administrative Virtual Assistant
             </h1>
 
             <p className="text-white text-lg sm:text-xl lg:text-2xl max-w-4xl leading-relaxed animate-fade-in-delay">
-              I help founders, startups, and remote teams stay organized, data-driven, and
-              efficient through structured operations support, research, and smart use of digital tools.
+              I help founders, startups, and remote teams stay organized,
+              data-driven, and efficient through structured operations support,
+              research, and smart use of digital tools.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 pt-8">
@@ -147,7 +175,9 @@ export default function VAPage({ onNavigate }: VAPageProps) {
       </section>
 
       {/* ── About Me ── */}
-      <section className={`py-16 ${theme === "dark" ? "bg-transparent" : "bg-gray-100"}`}>
+      <section
+        className={`py-16 ${theme === "dark" ? "bg-transparent" : "bg-gray-100"}`}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader title="About me" />
           <div
@@ -155,23 +185,30 @@ export default function VAPage({ onNavigate }: VAPageProps) {
               theme === "dark" ? "bg-gray-700/50" : "bg-white"
             } shadow-[0_0_15px_rgba(0,0,0,0.3)]`}
           >
-            <p className={`text-lg leading-relaxed ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-              I am a detail-oriented virtual assistant specializing in operations and administrative
-              support with a strong foundation in research and documentation.
-              <br /><br />
-              I excel at managing data, creating clear reports, and implementing efficient systems
-              using modern digital tools.
-              <br /><br />
-              My approach combines technical proficiency with high confidentiality and
-              professionalism, making me a reliable partner for founders and teams navigating
-              complex operational challenges.
+            <p
+              className={`text-lg leading-relaxed ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}
+            >
+              I am a detail-oriented virtual assistant specializing in
+              operations and administrative support with a strong foundation in
+              administrative and executive tasks as well as research and documentation.
+              <br />
+              <br />
+              I excel at managing data, creating clear reports, and implementing
+              efficient systems using modern digital tools.
+              <br />
+              <br />
+              My approach combines technical proficiency with high
+              confidentiality and professionalism, making me a reliable partner
+              for founders and teams navigating complex operational challenges.
             </p>
           </div>
         </div>
       </section>
 
       {/* ── Core Services & Tools ── */}
-      <section className={`py-16 mt-2 ${theme === "dark" ? "bg-transparent" : "bg-gray-100"}`}>
+      <section
+        className={`py-16 mt-2 ${theme === "dark" ? "bg-transparent" : "bg-gray-100"}`}
+      >
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader
             title="Core Services & Tools"
@@ -217,8 +254,9 @@ export default function VAPage({ onNavigate }: VAPageProps) {
                   : "text-gray-600 bg-amber-50 border-amber-200"
               }`}
             >
-              <strong>Confidentiality Note:</strong> All samples shown are anonymized or recreated
-              using mock data to maintain client confidentiality.
+              <strong>Confidentiality Note:</strong> All samples shown are
+              anonymized or recreated using mock data to maintain client
+              confidentiality.
             </p>
           </div>
         </div>
