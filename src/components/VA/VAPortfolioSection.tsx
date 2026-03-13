@@ -6,7 +6,7 @@ import VAModalPreview from "../VA/VAModalPreview";
 import type {
   PortfolioCategory,
   SampleProject,
-} from "../../data/vaPortfolioData";
+} from "../../data/VA/vaPortfolioData";
 
 interface VAPortfolioSectionProps {
   category: PortfolioCategory;
@@ -46,7 +46,7 @@ export default function VAPortfolioSection({
               className={`text-lg font-semibold mb-4 transition-colors duration-300
                 ${dark ? "text-gray-300" : "text-gray-700"}`}
             >
-              Sample Products
+              Sample Projects
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {category.samples.map((project) => (

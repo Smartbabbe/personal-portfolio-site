@@ -1,6 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { useTheme } from "../../contexts/ThemeContext";
-import type { FeaturedProject } from "../../data/vaPortfolioData";
+import type { FeaturedProject } from "../../data/VA/vaPortfolioData";
 
 interface VAFeaturedProjectCardProps {
   project: FeaturedProject;

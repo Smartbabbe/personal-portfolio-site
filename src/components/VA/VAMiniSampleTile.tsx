@@ -1,7 +1,7 @@
 // import { FileText } from "lucide-react";
 import { FileText } from "lucide-react";
 import { useTheme } from "../../contexts/ThemeContext";
-import type { SampleProject } from "../../data/vaPortfolioData";
+import type { SampleProject } from "../../data/VA/vaPortfolioData";
 
 interface VAMiniSampleTileProps {
   project: SampleProject;

@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import type {
   FeaturedProject,
   SampleProject,
-} from "../../data/vaPortfolioData";
+} from "../../data/VA/vaPortfolioData";
 
 type ModalProject = FeaturedProject | SampleProject;
 
