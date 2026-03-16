@@ -215,7 +215,7 @@ export const portfolioCategories: PortfolioCategory[] = [
         id: "blockchain security powerpoint presentation",
         title: "A presentation on Blockchain Security in the web3 space",
         description:
-          "A slide on the scalability of blockchainas well as the vulnerabilities of blockchain technology and the security measures that can be taken to mitigate these risks.",
+          "A slide on the scalability of blockchain as well as the vulnerabilities of blockchain technology and the security measures that can be taken to mitigate these risks.",
         tools: ["Google Slides"],
         skills: [
           "Blockchain Research",
