@@ -90,6 +90,7 @@ export const services: Service[] = [
       description: 'Comprehensive research and information compilation',
       items: [
           'Web research',
+          'PowerPoint presentations',
           'Academic research',
           'Recruitment research',
           'Information compilation'
@@ -103,17 +104,13 @@ export const services: Service[] = [
     classes: 'lg:col-span-2',
     description: 'Tools used to build systems, organize workflows, and provide structured support',
     items: [
-      'Google Workspace (docs, sheets, powerpoint, tasks, calendar, keep, forms, etc)', 
+      'Google Workspace (docs, sheets, slide, tasks, calendar, keep, forms, etc)', 
       'Calendly', 
-      'Asana', 
-      'Slack',
-      'Canva',
-      'Notion', 
+      'Microsoft Office (Word, Excel, PowerPoint, Outlook, etc)',
+      'Project Management tools (Asana, Trello, Monday.com, Notion, Slack, ClickUp, etc)',
+      'Graphic design tools (canva, Capcut)',
+      'Video creation tools (Loom, Capcut)',
       'Grammarly',
-      'Excel',
-      'Notion', 
-      'Slack', 
-      'Loom',
       'Mailchimp',
     ]
   }

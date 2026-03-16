@@ -21,6 +21,7 @@ import dashboard2 from "../../../public/VA/portfolio-proofs/data-dashboard1.png"
 import dashboard3 from "../../../public/VA/portfolio-proofs/data-dashboard2.png";
 import sales from "../../../public/VA/portfolio-proofs/sales.png";
 import habittracker from "../../../public/VA/portfolio-proofs/habittracker.png";
+import slide1 from "../../../public/VA/portfolio-proofs/slide.png";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -210,6 +211,26 @@ export const portfolioCategories: PortfolioCategory[] = [
       url: "https://docs.google.com/document/d/1HlyVslGOg6uLh0S8DjP5Gb3zcIZrt-k20lsRWnQwSG0/edit?usp=sharing",
     },
     samples: [
+      {
+        id: "blockchain security powerpoint presentation",
+        title: "A presentation on Blockchain Security in the web3 space",
+        description:
+          "A slide on the scalability of blockchainas well as the vulnerabilities of blockchain technology and the security measures that can be taken to mitigate these risks.",
+        tools: ["Google Slides"],
+        skills: [
+          "Blockchain Research",
+          "Presentation Design",
+          "Technical Writing",
+          "Web3 Knowledge",
+          "Security Analysis",
+          "Scalability Analysis",
+          "Risk Mitigation Strategies",
+          "Visual Communication",
+        ],
+        imagePlaceholder: "TalentBridge Nigeria — Market Research Report Cover",
+        thumbnail: slide1,
+        url: "https://docs.google.com/presentation/d/14tkHMbSp6bwPXTkQXSQDXogl7lBJC8hnWEhgeaxroX8/edit?usp=sharing",
+      },
       {
         id: "talentbridge-research",
         title: "Market Research Report — TalentBridge Nigeria",
