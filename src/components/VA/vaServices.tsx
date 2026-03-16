@@ -29,7 +29,7 @@ export default function VaServices({ service }: vaServicesSectionProps) {
     <div
       className={` ${theme === "dark" ? "bg-gray-700/30" : "bg-white"} ${service.classes ? service.classes : ''} rounded-xl shadow-xl hover:shadow-xl transition-all duration-300 p-8 `}
     >
-      <div className={`flex items-start gap-4 mb-6`}>
+      <div className={`flex flex-col sm:flex-row items-start gap-4 mb-6`}>
         <div className={`p-3 rounded-lg `}>
           <Icon
             className={`w-8 h-8 ${theme === "dark" ? "text-gray-300" : "text-gray-800 bg-purple-200 p-1"}`}
