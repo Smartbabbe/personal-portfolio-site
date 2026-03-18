@@ -30,7 +30,7 @@ function App() {
       {currentPage === "home" && <HomePage onNavigate={handleNavigate} />}
       {currentPage === "va" && <VAPage onNavigate={handleNavigate} />}
       {currentPage === "web3" && <Web3Page />}
-      {currentPage === "development" && <DevelopmentPage />}
+      {currentPage === "development" && <DevelopmentPage onNavigate={handleNavigate} />}
       {currentPage === "contact" && (
         <div className="pt-20">
           <ContactSection />
