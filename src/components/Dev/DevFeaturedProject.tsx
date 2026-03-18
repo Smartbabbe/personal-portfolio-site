@@ -1,8 +1,8 @@
 import { ExternalLink, Github, Users, ChevronDown, ChevronUp } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useState } from 'react';
-import loanwiseDashboard from '../../../public/Dev/loanwise-dashboard.png';
-import loanwisePortfolio from '../../../public/Dev/loanwise-portfolio.png';
+import loanwiseDashboard from '../../../public/Dev/porfolio-proofs/loanwise-dashboard.png';
+import loanwisePortfolio from '../../../public/Dev/porfolio-proofs/loanwise-portfolio.png';
 
 const featuredProject = {
   title: "LoanWise — Fintech Dashboard",
