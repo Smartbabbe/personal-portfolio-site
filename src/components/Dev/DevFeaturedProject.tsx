@@ -1,28 +1,7 @@
 import { ExternalLink, Github, Users, ChevronDown, ChevronUp } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useState } from 'react';
-import loanwiseDashboard from '../../../public/Dev/porfolio-proofs/loanwise-dashboard.png';
-import loanwisePortfolio from '../../../public/Dev/porfolio-proofs/loanwise-portfolio.png';
-
-const featuredProject = {
-  title: "LoanWise — Fintech Dashboard",
-  description:
-    "A collaborative fintech platform where clients apply for loans, risk analysts review credit scores, and managers track portfolios in real time.",
-  role: "Frontend Developer — Collaborative Team Project",
-  contributions: [
-    "Built the dashboard overview page with KPI summary cards and real-time data rendering",
-    "Developed the portfolio page with filterable loan records and dynamic status indicators",
-    "Integrated RESTful APIs to render live loan and user data across components",
-    "Implemented responsive UI components for improved usability across all devices",
-    "Debugged frontend logic and optimized state handling using React hooks",
-    "Collaborated with team members via Git and GitHub for version control",
-  ],
-  tools: ["React.js", "REST APIs", "Tailwind CSS", "Vercel"],
-  liveUrl: "https://loanwise-b-team.vercel.app/dashboard/overview",
-  portfolioUrl: "https://loanwise-b-team.vercel.app/dashboard/portfolio",
-  githubUrl: "https://github.com/loanwise-b-team",
-  category: "Fintech · Team Project",
-};
+import { devFeaturedProject } from '../../data/Dev/devPortfolioData';
 
 export default function DevFeaturedProject() {
   const { theme } = useTheme();
@@ -49,16 +28,16 @@ export default function DevFeaturedProject() {
             <div className="md:w-2/3 space-y-4">
               <div className="flex items-center gap-3 flex-wrap">
                 <h4 className={`text-2xl font-bold transition-colors dev-heading ${dark ? 'text-white group-hover:text-emerald-400' : 'text-gray-900 group-hover:text-emerald-600'}`}>
-                  {featuredProject.title}
+                  {devFeaturedProject.title}
                 </h4>
                 <span className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium" style={{ background: 'rgba(59,130,246,0.1)', color: '#3B82F6' }}>
                   <Users className="w-3 h-3" />
-                  {featuredProject.category}
+                  {devFeaturedProject.category}
                 </span>
               </div>
 
               <p className={`${dark ? 'text-gray-300' : 'text-gray-700'}`}>
-                {featuredProject.description}
+                {devFeaturedProject.description}
               </p>
 
               {/* Expandable section */}
@@ -69,7 +48,7 @@ export default function DevFeaturedProject() {
                       My Contributions
                     </p>
                     <ul className="space-y-1.5">
-                      {featuredProject.contributions.map((c) => (
+                      {devFeaturedProject.contributions.map((c) => (
                         <li key={c} className={`flex items-start gap-2 text-sm ${dark ? 'text-gray-300' : 'text-gray-700'}`}>
                           <span className="mt-2 w-1 h-1 rounded-full shrink-0 bg-emerald-400" />
                           {c}
@@ -82,7 +61,7 @@ export default function DevFeaturedProject() {
 
               {/* Tools */}
               <div className="flex flex-wrap gap-2">
-                {featuredProject.tools.map((tool) => (
+                {devFeaturedProject.tools.map((tool) => (
                   <span key={tool} className={`px-3 py-1 rounded-full text-sm ${dark ? 'bg-emerald-900/30 text-emerald-300' : 'bg-emerald-50 text-emerald-700'}`}>
                     {tool}
                   </span>
@@ -132,14 +111,14 @@ export default function DevFeaturedProject() {
 <div className="md:w-1/3 flex flex-col gap-2 self-stretch">
   <div className="flex-1 rounded-lg overflow-hidden">
     <img
-      src={loanwiseDashboard}
+      src={devFeaturedProject.images[0].src}
       alt="LoanWise Dashboard Overview"
       className="w-full h-full object-cover object-top"
     />
   </div>
   <div className="flex-1 rounded-lg overflow-hidden">
     <img
-      src={loanwisePortfolio}
+      src={devFeaturedProject.images[1].src}
       alt="LoanWise Portfolio Page"
       className="w-full h-full object-cover object-top"
     />

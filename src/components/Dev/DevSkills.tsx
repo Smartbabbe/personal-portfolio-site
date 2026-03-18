@@ -1,49 +1,5 @@
 import { useTheme } from '../../contexts/ThemeContext';
-
-const skillGroups = [
-  {
-    label: 'Core Languages',
-    color: '#6EE7B7',
-    skills: [
-      { name: 'HTML5', icon: 'html5' },
-      { name: 'CSS3', icon: 'css3' },
-      { name: 'JavaScript', icon: 'javascript' },
-      { name: 'TypeScript', icon: 'typescript' },
-      { name: 'Solidity', icon: 'solidity' },
-    ],
-  },
-  {
-    label: 'Frameworks & Libraries',
-    color: '#3B82F6',
-    skills: [
-      { name: 'React.js', icon: 'react' },
-      { name: 'Next.js', icon: 'nextjs' },
-      { name: 'Tailwind CSS', icon: 'tailwindcss' },
-    ],
-  },
-  {
-    label: 'Tools & Workflow',
-    color: '#8B5CF6',
-    skills: [
-      { name: 'Git', icon: 'git' },
-      { name: 'GitHub', icon: 'github' },
-      { name: 'Vite', icon: 'vitejs' },
-      { name: 'VS Code', icon: 'vscode' },
-      { name: 'Figma', icon: 'figma' },
-      { name: 'Vercel', icon: 'vercel' },
-    ],
-  },
-  {
-    label: 'Other Skills',
-    color: '#F59E0B',
-    skills: [
-      { name: 'REST APIs', icon: 'fastapi' },
-      { name: 'Notion', icon: 'notion' },
-      { name: 'Slack', icon: 'slack' },
-      { name: 'Trello', icon: 'trello' },
-    ],
-  },
-];
+import { skillGroups } from '../../data/Dev/devPortfolioData';
 
 export default function DevSkills() {
   const { theme } = useTheme();

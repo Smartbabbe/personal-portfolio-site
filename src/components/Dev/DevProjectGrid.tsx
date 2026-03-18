@@ -1,135 +1,6 @@
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import { useTheme } from "../../contexts/ThemeContext";
-
-const projects = [
-  {
-    title: "Personal Portfolio",
-    description:
-      "This multi-page portfolio featuring VA, Web3, and Dev sections — built from scratch with React, TypeScript, and Tailwind CSS.",
-    tools: ["React.js", "TypeScript", "Tailwind CSS", "Vite"],
-    category: "Web Application",
-    liveUrl: "https://personal-portfolio-site-ten-rouge.vercel.app/",
-    githubUrl: "https://github.com/Smartbabbe/personal-portfolio-site",
-    accent: "#6EE7B7",
-    gradient: "linear-gradient(135deg, #111827, #1f2937)",
-  },  
-  {
-    title: "Netflix Clone",
-    description:
-      "A faithful recreation of the Netflix homepage UI including hero banner, content rows, and hover effects.",
-    tools: ["HTML5", "CSS3", "JavaScript"],
-    category: "UI Clone",
-    liveUrl: "https://cloneflix-one-gamma.vercel.app/",
-    githubUrl: "",
-    accent: "#cf4148",
-    gradient: "linear-gradient(135deg, #1a0000, #2d0000)",
-  },
-  {
-    title: "Huddle Landing Page",
-    description:
-      "A clean, responsive landing page for a community platform — built from a Frontend Mentor challenge using HTML and CSS.",
-    tools: ["HTML5", "CSS3"],
-    category: "Landing Page",
-    liveUrl: "https://huddle-landing-page-ruby-one.vercel.app/",
-    githubUrl: "https://github.com/Smartbabbe/Huddle-landing-page",
-    accent: "#3B82F6",
-    gradient: "linear-gradient(135deg, #1a1a2e, #16213e)",
-  },
-  {
-    title: "Udemy Clone",
-    description:
-      "A pixel-accurate recreation of the Udemy homepage with course grid layout, navigation bar, and hero section.",
-    tools: ["HTML5", "CSS3"],
-    category: "UI Clone",
-    liveUrl: "https://udemsclon.vercel.app/",
-    githubUrl: "https://github.com/Smartbabbe/udemsclon",
-    accent: "#8B5CF6",
-    gradient: "linear-gradient(135deg, #0d1117, #161b22)",
-  },
-  {
-    title: "Rock Paper Scissors",
-    description:
-      "An interactive game with score tracking, animated results, and clean game logic built entirely in vanilla JavaScript.",
-    tools: ["HTML5", "CSS3", "JavaScript"],
-    category: "Interactive Game",
-    liveUrl: "https://rock-paper-scissors-master-olive.vercel.app/",
-    githubUrl: "https://github.com/Smartbabbe/rock-paper-scissors-master",
-    accent: "#F59E0B",
-    gradient: "linear-gradient(135deg, #1e1e2e, #2a2a3e)",
-  },
-  {
-    title: "Instagram Clone",
-    description:
-      "A faithful recreation of the Instagram feed UI including stories bar, post cards, and sidebar — built mobile-first.",
-    tools: ["HTML5", "CSS3"],
-    category: "UI Clone",
-    liveUrl: "https://cloninsta-phi.vercel.app/",
-    githubUrl: "https://github.com/Smartbabbe/cloninsta",
-    accent: "#EC4899",
-    gradient: "linear-gradient(135deg, #0a0a0f, #1a1a2f)",
-  },
-
-  {
-    title: "E-Commerce Product Page",
-    description:
-      "A modern product page with image gallery, size selector, cart functionality, and smooth checkout flow.",
-    tools: ["React.js", "TypeScript", "Tailwind CSS"],
-    category: "E-Commerce",
-    liveUrl: "",
-    githubUrl: "",
-    accent: "#8B5CF6",
-    gradient: "linear-gradient(135deg, #1a0533, #2d0a4e)",
-    comingSoon: true,
-  },
-  {
-    title: "Weather App",
-    description:
-      "A location-based weather app with real-time forecasts, humidity and wind speed data, and animated weather icons.",
-    tools: ["React.js", "JavaScript", "CSS3"],
-    category: "Web App",
-    liveUrl: "",
-    githubUrl: "",
-    accent: "#3B82F6",
-    gradient: "linear-gradient(135deg, #0c1a3a, #0f2952)",
-    comingSoon: true,
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A Kanban-style task manager with drag-and-drop boards, priority tags, due dates, and local storage persistence.",
-    tools: ["React.js", "TypeScript", "Tailwind CSS"],
-    category: "Productivity",
-    liveUrl: "",
-    githubUrl: "",
-    accent: "#6EE7B7",
-    gradient: "linear-gradient(135deg, #0a2018, #0f3020)",
-    comingSoon: true,
-  },
-  {
-    title: "Restaurant Ordering UI",
-    description:
-      "A food ordering interface with menu categories, cart management, and order summary for a fictional restaurant.",
-    tools: ["React.js", "JavaScript", "CSS3"],
-    category: "UI Design",
-    liveUrl: "",
-    githubUrl: "",
-    accent: "#F59E0B",
-    gradient: "linear-gradient(135deg, #2a0a00, #3d1000)",
-    comingSoon: true,
-  },
-  {
-    title: "Blog & News Feed",
-    description:
-      "A responsive blog platform with category filters, featured articles, reading time estimates, and an editorial layout.",
-    tools: ["React.js", "TypeScript", "Tailwind CSS"],
-    category: "Content Platform",
-    liveUrl: "",
-    githubUrl: "",
-    accent: "#3B82F6",
-    gradient: "linear-gradient(135deg, #0a0f1a, #111827)",
-    comingSoon: true,
-  },
-];
+import { projects } from "../../data/Dev/devPortfolioData";
 
 export default function DevProjectGrid() {
   const { theme } = useTheme();
@@ -180,18 +51,30 @@ export default function DevProjectGrid() {
                 className="aspect-video relative overflow-hidden flex items-center justify-center"
                 style={{ background: project.gradient }}
               >
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                  style={{
-                    background: `radial-gradient(circle at center, ${project.accent}, transparent)`,
-                  }}
-                />
-                <span
-                  className="dev-heading text-5xl font-black opacity-[0.08] group-hover:opacity-[0.15] transition-opacity select-none"
-                  style={{ color: project.accent }}
-                >
-                  {project.title.charAt(0)}
-                </span>
+                {project.thumbnail ? (
+                  <div className="absolute inset-[5%] rounded-xl overflow-hidden shadow-lg">
+                    <img
+                      src={project.thumbnail}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                ) : (
+                  <>
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
+                      style={{
+                        background: `radial-gradient(circle at center, ${project.accent}, transparent)`,
+                      }}
+                    />
+                    <span
+                      className="dev-heading text-5xl font-black opacity-[0.08] group-hover:opacity-[0.15] transition-opacity select-none"
+                      style={{ color: project.accent }}
+                    >
+                      {project.title.charAt(0)}
+                    </span>
+                  </>
+                )}
                 {project.comingSoon ? (
                   <span
                     className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider"

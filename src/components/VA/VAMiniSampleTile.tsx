@@ -26,23 +26,19 @@ export default function VAMiniSampleTile({
     >
       {/* Thumbnail */}
       <div
-        className={`aspect-video flex items-center justify-center overflow-hidden
-    ${theme === "dark" ? "bg-gray-700/60" : "bg-gray-100"}`}
+        className={`aspect-video flex items-center justify-center overflow-hidden ${theme === "dark" ? "bg-gray-700/60" : "bg-gray-100"}`}
       >
         {project.thumbnail ? (
-          <img
-            src={project.thumbnail}
-            alt={project.title}
-            className="w-full h-full object-cover object-top"
-          />
+          <div className="w-[90%] h-[90%] rounded-xl overflow-hidden shadow-md">
+            <img
+              src={project.thumbnail}
+              alt={project.title}
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
         ) : (
           <FileText
-            className={`w-10 h-10 transition-colors duration-300
-        ${
-          theme === "dark"
-            ? "text-gray-500 group-hover:text-purple-400"
-            : "text-gray-400 group-hover:text-purple-500"
-        }`}
+            className={`w-10 h-10 transition-colors duration-300 ${theme === "dark" ? "text-gray-500 group-hover:text-purple-400" : "text-gray-400 group-hover:text-purple-500"}`}
           />
         )}
       </div>
