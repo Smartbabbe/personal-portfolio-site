@@ -4,8 +4,9 @@ import netClo from '../../../public/Dev/porfolio-proofs/net-clo.png';
 import huddleLanding from '../../../public/Dev/porfolio-proofs/huddle-landing.png';
 import udeClo from '../../../public/Dev/porfolio-proofs/ude-clo.png';
 import rockPaperScissors from '../../../public/Dev/porfolio-proofs/rock-paper-scissors.png';
-import instaClo from '../../../public/Dev/porfolio-proofs/insta-clo.png';
 import portfolioSite from '../../../public/Dev/porfolio-proofs/portfolio-site.png';
+import ecommerce from '../../../public/Dev/porfolio-proofs/maison-ecommerce.png'
+import weatherapp from '../../../public/Dev/porfolio-proofs/weather.png';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -130,6 +131,17 @@ export const projects: DevProject[] = [
     accent: '#6EE7B7',
     gradient: 'linear-gradient(135deg, #111827, #1f2937)',
     thumbnail: portfolioSite,
+  },  
+  {
+    title: 'Maison Noir E-Commerce Product Page',
+    description: 'A modern E-commerce site with image gallery, size selector, cart functionality, and smooth checkout flow.',
+    tools: ['React.js', 'TypeScript', 'Tailwind CSS'],
+    category: 'E-Commerce',
+    liveUrl: 'https://maison-noir-luxury-fashion-e-commer.vercel.app/',
+    githubUrl: 'https://github.com/Smartbabbe/Maison-Noir-luxury-fashion-e-commerce-site',
+    accent: '#8B5CF6',
+    gradient: 'linear-gradient(135deg, #1a0533, #2d0a4e)',
+    thumbnail: ecommerce,
   },
   {
     title: 'Netflix Clone',
@@ -143,6 +155,17 @@ export const projects: DevProject[] = [
     thumbnail: netClo,
   },
   {
+  title: 'Zephyr — Weather App',
+  description: 'A real-time weather app built with OpenWeatherMap API - search any city or use your location to get current conditions, hourly forecasts, and a 5-day outlook with dynamic backgrounds that change with the weather.',
+  tools: ['React.js', 'TypeScript', 'Tailwind CSS', 'OpenWeatherMap API'],
+  category: 'Web App',
+  liveUrl: 'https://weather-app-kappa-ebon-71.vercel.app/',
+  githubUrl: 'https://github.com/Smartbabbe/weather-app',
+  accent: '#38BDF8',
+  gradient: 'linear-gradient(135deg, #0c1a3a, #0369a1)',
+  thumbnail: weatherapp,
+},
+  {
     title: 'Huddle Landing Page',
     description: 'A clean, responsive landing page for a community platform — built from a Frontend Mentor challenge using HTML and CSS.',
     tools: ['HTML5', 'CSS3'],
@@ -153,6 +176,18 @@ export const projects: DevProject[] = [
     gradient: 'linear-gradient(135deg, #1a1a2e, #16213e)',
     thumbnail: huddleLanding,
   },
+
+  {
+    title: 'Rock Paper Scissors',
+    description: 'An interactive game with score tracking, animated results, and clean game logic built entirely in vanilla JavaScript.',
+    tools: ['HTML5', 'CSS3', 'JavaScript'],
+    category: 'Interactive Game',
+    liveUrl: 'https://rock-paper-scissors-master-olive.vercel.app/',
+    githubUrl: 'https://github.com/Smartbabbe/rock-paper-scissors-master',
+    accent: '#F59E0B',
+    gradient: 'linear-gradient(135deg, #1e1e2e, #2a2a3e)',
+    thumbnail: rockPaperScissors,
+  },  
   {
     title: 'Udemy Clone',
     description: 'A pixel-accurate recreation of the Udemy homepage with course grid layout, navigation bar, and hero section.',
@@ -164,50 +199,7 @@ export const projects: DevProject[] = [
     gradient: 'linear-gradient(135deg, #0d1117, #161b22)',
     thumbnail: udeClo,
   },
-  {
-    title: 'Rock Paper Scissors',
-    description: 'An interactive game with score tracking, animated results, and clean game logic built entirely in vanilla JavaScript.',
-    tools: ['HTML5', 'CSS3', 'JavaScript'],
-    category: 'Interactive Game',
-    liveUrl: 'https://rock-paper-scissors-master-olive.vercel.app/',
-    githubUrl: 'https://github.com/Smartbabbe/rock-paper-scissors-master',
-    accent: '#F59E0B',
-    gradient: 'linear-gradient(135deg, #1e1e2e, #2a2a3e)',
-    thumbnail: rockPaperScissors,
-  },
-  {
-    title: 'Instagram Clone',
-    description: 'A faithful recreation of the Instagram feed UI including stories bar, post cards, and sidebar — built mobile-first.',
-    tools: ['HTML5', 'CSS3'],
-    category: 'UI Clone',
-    liveUrl: 'https://cloninsta-phi.vercel.app/',
-    githubUrl: 'https://github.com/Smartbabbe/cloninsta',
-    accent: '#EC4899',
-    gradient: 'linear-gradient(135deg, #0a0a0f, #1a1a2f)',
-    thumbnail: instaClo,
-  },
-  {
-    title: 'E-Commerce Product Page',
-    description: 'A modern product page with image gallery, size selector, cart functionality, and smooth checkout flow.',
-    tools: ['React.js', 'TypeScript', 'Tailwind CSS'],
-    category: 'E-Commerce',
-    liveUrl: '',
-    githubUrl: '',
-    accent: '#8B5CF6',
-    gradient: 'linear-gradient(135deg, #1a0533, #2d0a4e)',
-    comingSoon: true,
-  },
-  {
-    title: 'Weather App',
-    description: 'A location-based weather app with real-time forecasts, humidity and wind speed data, and animated weather icons.',
-    tools: ['React.js', 'JavaScript', 'CSS3'],
-    category: 'Web App',
-    liveUrl: '',
-    githubUrl: '',
-    accent: '#3B82F6',
-    gradient: 'linear-gradient(135deg, #0c1a3a, #0f2952)',
-    comingSoon: true,
-  },
+
   {
     title: 'Task Management App',
     description: 'A Kanban-style task manager with drag-and-drop boards, priority tags, due dates, and local storage persistence.',
