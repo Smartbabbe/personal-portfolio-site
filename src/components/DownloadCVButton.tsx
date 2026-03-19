@@ -19,7 +19,7 @@ export default function DownloadCVButton({
   // Map CV types to their file paths and names
   const cvConfig = {
     web3: {
-      path: "/cv/esther-web3-cv.pdf",
+      path: "/cv/Esther-web3-cv.pdf",
       filename: "Esther-Okon-Web3-CV.pdf"
     },
     va: {
@@ -27,7 +27,7 @@ export default function DownloadCVButton({
       filename: "Esther-Okon-CV.pdf"
     },
     dev: {
-      path: "/cv/esther-dev-cv.pdf",
+      path: "/Dev/cv/Esther-frontend-cv.pdf",
       filename: "Esther-Okon-Developer-CV.pdf"
     },
     home: {

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { FileText, Database, BarChart2, Calendar, ExternalLink } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 import ContactSection from "./ContactSection";
-import type { FeaturedProject, ProjectVisual } from "../data/vaPortfolioData";
+import type { FeaturedProject, ProjectVisual } from "../data/VA/vaPortfolioData";
 
 interface ProjectDetailViewProps {
   project: FeaturedProject;

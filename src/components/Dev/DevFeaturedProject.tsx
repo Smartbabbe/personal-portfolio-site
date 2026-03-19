@@ -9,7 +9,7 @@ export default function DevFeaturedProject() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section className={`py-24 ${dark ? 'bg-white/[0.02]' : 'bg-white'}`}>
+    <section id="projects" className={`py-24 ${dark ? 'bg-white/[0.02]' : 'bg-white'}`}>
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="dev-animate mb-12">

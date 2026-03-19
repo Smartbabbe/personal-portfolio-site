@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
-import { ArrowLeft, ArrowUp } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
-import DevHero from '../components/Dev/DevHero';
-import DevSkills from '../components/Dev/DevSkills';
-import DevFeaturedProject from '../components/Dev/DevFeaturedProject';
-import DevProjectGrid from '../components/Dev/DevProjectGrid';
-import ContactSection from '../components/ContactSection';
+import { useEffect, useState } from "react";
+import { ArrowLeft, ArrowUp } from "lucide-react";
+import { useTheme } from "../contexts/ThemeContext";
+import DevHero from "../components/Dev/DevHero";
+import DevSkills from "../components/Dev/DevSkills";
+import DevFeaturedProject from "../components/Dev/DevFeaturedProject";
+import DevProjectGrid from "../components/Dev/DevProjectGrid";
+import ContactSection from "../components/ContactSection";
+import { Resume } from "../components/Resume";
 
 interface DevelopmentPageProps {
   onNavigate: (page: string) => void;
@@ -13,7 +14,7 @@ interface DevelopmentPageProps {
 
 export default function DevelopmentPage({ onNavigate }: DevelopmentPageProps) {
   const { theme } = useTheme();
-  const dark = theme === 'dark';
+  const dark = theme === "dark";
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Scroll reveal
@@ -22,13 +23,15 @@ export default function DevelopmentPage({ onNavigate }: DevelopmentPageProps) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('dev-visible');
+            entry.target.classList.add("dev-visible");
           }
         });
       },
-      { threshold: 0.08 }
+      { threshold: 0.08 },
     );
-    document.querySelectorAll('.dev-animate').forEach((el) => observer.observe(el));
+    document
+      .querySelectorAll(".dev-animate")
+      .forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
@@ -37,17 +40,18 @@ export default function DevelopmentPage({ onNavigate }: DevelopmentPageProps) {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <div className={`min-h-screen pt-20 ${dark ? 'bg-[#0A0A0F]' : 'bg-[#F7F7FB]'}`}>
-
+    <div
+      className={`min-h-screen pt-20 ${dark ? "bg-[#0A0A0F]" : "bg-[#F7F7FB]"}`}
+    >
       {/* Fonts + Devicons + animation keyframes — minimal, only what Tailwind can't do */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
@@ -65,13 +69,12 @@ export default function DevelopmentPage({ onNavigate }: DevelopmentPageProps) {
       `}</style>
 
       <div className="dev-page relative">
-
         {/* Back to Home button */}
         <div className="absolute top-4 left-4 md:left-8 z-20">
           <button
-            onClick={() => onNavigate('home')}
+            onClick={() => onNavigate("home")}
             className={`flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg transition-all hover:scale-105
-              ${dark ? 'text-gray-300 hover:text-white bg-white/5 hover:bg-white/10' : 'text-gray-600 hover:text-gray-900 bg-white/80 hover:bg-white shadow-sm'}`}
+              ${dark ? "text-gray-300 hover:text-white bg-white/5 hover:bg-white/10" : "text-gray-600 hover:text-gray-900 bg-white/80 hover:bg-white shadow-sm"}`}
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Home
@@ -82,6 +85,29 @@ export default function DevelopmentPage({ onNavigate }: DevelopmentPageProps) {
         <DevSkills />
         <DevFeaturedProject />
         <DevProjectGrid />
+        {/* Confidentiality note */}
+        <div className="w-4/5 mx-auto mt-12 text-center">
+          <p
+            className={`text-sm rounded-lg p-4 inline-block transition-colors duration-300 border ${
+              theme === "dark"
+                ? "text-gray-400 bg-amber-900/30 border-amber-800"
+                : "text-gray-600 bg-amber-50 border-amber-200"
+            }`}
+          >
+            <strong>Confidentiality Note:</strong> All samples shown are
+            anonymized or recreated using mock data to maintain client
+            confidentiality.
+          </p>
+        </div>
+        <Resume
+          cvType="dev"
+          buttonText="Download Developer CV"
+          title="Developer Resume"
+          description="Download my comprehensive developer CV with full-stack development experience."
+          buttonClassName={`px-8 py-4 ${theme === "dark" ? "bg-emerald-600 hover:bg-emerald-700" : "bg-emerald-500 hover:bg-emerald-600"} text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2 mx-auto`}
+          className="mt-11"
+        />
+
         <ContactSection />
 
         {/* Scroll to top button */}
@@ -89,7 +115,7 @@ export default function DevelopmentPage({ onNavigate }: DevelopmentPageProps) {
           <button
             onClick={scrollToTop}
             className={`fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110
-              ${dark ? 'bg-white/10 hover:bg-white/20 text-white border border-white/10' : 'bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 shadow-md'}`}
+              ${dark ? "bg-white/10 hover:bg-white/20 text-white border border-white/10" : "bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 shadow-md"}`}
             aria-label="Scroll to top"
           >
             <ArrowUp className="w-5 h-5" />

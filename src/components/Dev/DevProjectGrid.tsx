@@ -7,7 +7,7 @@ export default function DevProjectGrid() {
   const dark = theme === "dark";
 
   return (
-    <section className="py-24">
+    <section className="pt-20 pb-3">
       <div className="max-w-6xl mx-auto px-6">
         <div className="dev-animate mb-14">
           <p

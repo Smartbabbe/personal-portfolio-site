@@ -7,6 +7,7 @@ interface ResumeProps {
   title?: string;
   description?: string;
   buttonClassName?: string;
+  className?: string;
 }
 
 export const Resume = ({ 
@@ -14,7 +15,8 @@ export const Resume = ({
   buttonText = "Download CV",
   title = "Resume / CV",
   description = "Download my comprehensive CV to learn more about my experience and qualifications.",
-  buttonClassName
+  buttonClassName,
+  className
 }: ResumeProps) => {
   const { theme } = useTheme();
   
@@ -23,7 +25,7 @@ export const Resume = ({
 
   return (
     <section
-      className={`py-16 mt-2 ${theme === "dark" ? "bg-gray-600/30" : "bg-gray-50"}`}
+      className={` ${className} py-16 mt-2 ${theme === "dark" ? "bg-gray-600/30" : "bg-gray-50"}`}
     >
       <div className="max-w-5xl mx-auto px-6 text-center space-y-6">
         <h2
