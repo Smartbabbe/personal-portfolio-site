@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTheme } from '../../contexts/ThemeContext'
-import DownloadCVButton from '../DownloadCVButton'
+// import DownloadCVButton from '../DownloadCVButton'
 
 const NODES = [
   { x: 50, y: 20, label: 'DeFi',      center: false },
@@ -168,10 +168,10 @@ export default function Web3Hero(_props: { onNavigate?: (p: string) => void }) {
 
           <div className={`mb-8 transition-all duration-700 delay-75 ${ready ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
             <h1 className={`font-black leading-[0.88] tracking-[-0.04em] ${d ? 'text-zinc-100' : 'text-zinc-900'}`}
-              style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)' }}>ESTHER</h1>
+              style={{ fontSize: 'clamp(3.5rem, 6vw, 6rem)', fontFamily: 'serif' }}>ESTHER</h1>
             <h1 className="font-black leading-[0.88] tracking-[-0.04em]"
-              style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)', background: 'linear-gradient(135deg, #b87333, #d4956a, #8b5e2a)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              OKON.
+              style={{ fontSize: 'clamp(3.5rem, 8vw, 8rem)', fontFamily: 'inherit sans-serif', background: 'linear-gradient(135deg, #b87333, #d4956a, #8b5e2a)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              OKON
             </h1>
           </div>
 
@@ -195,9 +195,9 @@ export default function Web3Hero(_props: { onNavigate?: (p: string) => void }) {
               onClick={() => document.getElementById('w3-journey')?.scrollIntoView({ behavior: 'smooth' })}
               className={`px-6 py-3 rounded-xl text-sm font-semibold border transition-all hover:scale-105 active:scale-95 ${d ? 'border-zinc-700 text-zinc-300 hover:bg-zinc-800' : 'border-stone-300 text-zinc-700 hover:bg-stone-100'}`}
             >My Journey</button>
-            <DownloadCVButton cvType="web3" buttonText="Download CV"
+            {/* <DownloadCVButton cvType="web3" buttonText="Download CV"
               className={`px-6 py-3 rounded-xl text-sm font-semibold border transition-all hover:scale-105 active:scale-95 ${d ? 'border-amber-700/30 text-amber-500 hover:bg-amber-900/10' : 'border-amber-300 text-amber-700 hover:bg-amber-50'}`}
-            />
+            /> */}
           </div>
 
           <div className={`flex gap-8 transition-all duration-700 delay-500 ${ready ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>

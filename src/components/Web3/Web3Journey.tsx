@@ -458,7 +458,7 @@ export default function Web3Journey() {
             <p
               className={`text-sm mt-2 ${d ? "text-zinc-500" : "text-zinc-500"}`}
             >
-              2021 → present · 11 milestones
+              2021 → present · {milestones.length} milestones
             </p>
           </div>
           <div
