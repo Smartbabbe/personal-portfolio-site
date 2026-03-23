@@ -55,6 +55,7 @@ export default function VAPage({ onNavigate }: VAPageProps) {
   );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     if (isPaused) return;
@@ -63,6 +64,12 @@ export default function VAPage({ onNavigate }: VAPageProps) {
     }, 5000);
     return () => clearInterval(interval);
   }, [isPaused]);
+
+  useEffect(() => {
+    const fn = () => setShowScrollTop(window.scrollY > 400);
+    window.addEventListener("scroll", fn);
+    return () => window.removeEventListener("scroll", fn);
+  }, []);
 
   const scrollToPortfolio = () => {
     document
@@ -280,6 +287,17 @@ if (selectedProject) {
         .animate-fade-in       { animation: fade-in 0.8s ease-out; }
         .animate-fade-in-delay { animation: fade-in 0.8s ease-out 0.2s both; }
       `}</style>
+
+
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} 
+          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110 border border-white/30 bg-purple-300/20 text-[#C9A84C] hover:bg-purple-500/20"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+            </svg>
+          </button>)}
     </div>
   );
 }
