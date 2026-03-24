@@ -35,6 +35,7 @@ export default function Web3Page({ onNavigate }: Props) {
       `}</style>
 
       <div id="w3-root">
+        
         <Web3Hero      onNavigate={onNavigate} />
         <Web3Skills    />
         <Web3Experience />

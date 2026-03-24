@@ -43,18 +43,20 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 className={`text-center md:text-justify text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-700"} leading-relaxed`}
               >
                 I work across operations support, decentralized finance,
-                frontend development, and community leadership — building
+                frontend development, and community leadership - building
                 systems, educating users, and supporting growth in fast-moving
                 environments.
               </p>
             </div>
 
             <div className="flex flex-wrap md:flex-nowrap gap-3 pt-10">
+
+              
               <button
                 onClick={() => onNavigate("va")}
-                className="group md:text-[0.8rem] relative w-full md:w-auto px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
+                className="group md:text-[0.8rem] relative w-full md:w-auto px-8 py-4 bg-purple-800 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
                 style={{
-                  boxShadow: "0 0 20px rgba(147, 51, 234, 0.3)",
+                  boxShadow: "0 0 20px rgba(62, 37, 87, 0.3)",
                   animation: "pulse-purple 3s ease-in-out infinite",
                 }}
               >
@@ -69,8 +71,8 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 onClick={() => onNavigate("web3")}
                 className="group relative w-full md:w-auto px-8 py-4 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
                 style={{
-                  backgroundColor: "#031323",
-                  boxShadow: "0 0 20px rgba(3, 19, 35, 0.4)",
+                  backgroundColor: "#ac7856",
+                  boxShadow: "0 0 20px rgba(105, 79, 30, 0.4)",
                   animation: "pulse-web3 3s ease-in-out infinite 1s",
                 }}
               >
@@ -85,7 +87,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 onClick={() => onNavigate("development")}
                 className="group relative w-full md:w-auto px-8 py-4 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
                 style={{
-                  backgroundColor: "#1D4D3A",
+                  backgroundColor: "#3f38b3",
                   boxShadow: "0 0 20px rgba(29, 77, 58, 0.4)",
                   animation: "pulse-dev 3s ease-in-out infinite 2s",
                 }}
@@ -115,10 +117,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
         @keyframes pulse-web3 {
           0%, 100% {
-            box-shadow: 0 0 20px rgba(3, 19, 35, 0.4);
+            box-shadow: 0 0 20px rgba(141, 80, 22, 0.4);
           }
           50% {
-            box-shadow: 0 0 40px rgba(3, 19, 35, 0.7);
+            box-shadow: 0 0 40px rgba(90, 76, 50, 0.7);
           }
         }
 
@@ -134,3 +136,8 @@ export default function HomePage({ onNavigate }: HomePageProps) {
     </div>
   );
 }
+
+
+
+
+
