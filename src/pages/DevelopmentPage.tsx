@@ -70,7 +70,7 @@ export default function DevelopmentPage({ onNavigate }: DevelopmentPageProps) {
 
       <div className="dev-page relative">
         {/* Back to Home button */}
-        <div className="absolute top-4 left-4 md:left-8 z-20">
+        <div className="top-4  z-20 relative z-5 w-[95%] md:w-3/5 mx-auto px-6">
           <button
             onClick={() => onNavigate("home")}
             className={`flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg transition-all hover:scale-105
