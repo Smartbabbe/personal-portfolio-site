@@ -346,7 +346,7 @@ export const portfolioCategories: PortfolioCategory[] = [
       ],
       ctaLabel: "Request a Business Proposal",
       thumbnail: business1,
-      url: "paste-your-google-doc-link-here",
+      url: "https://docs.google.com/document/d/1lajD1Wls5qABFQCBjCIXJ7HCIRcmiFQ1zP3nRUIn0gg/edit?usp=sharing",
     },
     samples: [
       {
