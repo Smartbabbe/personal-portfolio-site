@@ -222,7 +222,7 @@ export const projects: DevProject[] = [
   },
 
   {
-    title: "Blog & News Feed",
+    title: "Bloggy - Blog & News Feed",
     description:
       "A responsive blog platform with categories in Technology, Design, Business, Culture, Science, and Health; search functionality; dark and light theme; an editorial layout and dynamic sections for topics, trending and most read articles.",
     tools: ["React.js", "TypeScript", "Tailwind CSS"],
