@@ -25,7 +25,7 @@ Each section has its own color identity, layout, and content - all under one uni
 - Discipline-coded navigation — purple for VA, blue/indigo for Dev, copper/gold for Web3
 - Fully responsive across mobile, tablet, and desktop
 - DeFi protocol tools section covering Solana, BSC, and TON ecosystems
-- Dark theme throughout
+- Dark theme throughout with toggle option for light theme
 - Smooth page transitions and consistent component architecture
 
 ---
@@ -42,9 +42,10 @@ Each section has its own color identity, layout, and content - all under one uni
 
 ## Getting Started
 
-bash
+```bash
 git clone [repo url]
 cd [project folder]
 npm install
 npm run dev
+```
 
