@@ -3,7 +3,7 @@
 > Multi-disciplinary portfolio covering Virtual Assistance, 
 > Web3 & DeFi Operations, and Frontend Development.
 
-🔗 **Live site:** [personal-portfolio-site-ten-rouge.vercel.app](https://personal-portfolio-site-ten-rouge.vercel.app)
+🔗 **Live site:** [portfolio site](https://personal-portfolio-site-ten-rouge.vercel.app)
 
 ---
 
@@ -43,8 +43,8 @@ Each section has its own color identity, layout, and content - all under one uni
 ## Getting Started
 
 ```bash
-git clone [repo url]
-cd [project folder]
+git clone [[repo url](https://github.com/Smartbabbe/portfolio/)]
+cd portfolio
 npm install
 npm run dev
 ```
