@@ -43,7 +43,7 @@ Each section has its own color identity, layout, and content - all under one uni
 ## Getting Started
 
 ```bash
-git clone [[repo url](https://github.com/Smartbabbe/portfolio/)]
+git clone https://github.com/Smartbabbe/portfolio/
 cd portfolio
 npm install
 npm run dev
