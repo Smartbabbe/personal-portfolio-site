@@ -48,18 +48,6 @@ cd [project folder]
 npm install
 npm run dev
 ```
-
-## Project Structure
-
-src/
-├── pages/
-│   ├── Home.tsx     # Landing page with discipline navigation
-│   ├── VA.tsx       # Virtual Assistant page
-│   ├── Web3.tsx     # Web3 & DeFi page
-│   └── Dev.tsx      # Frontend Development page
-├── components/      # Reusable UI components
-└── assets/          # Images and static files
-
 ---
 
 ## What I Learned Building This
