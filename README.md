@@ -49,3 +49,31 @@ npm install
 npm run dev
 ```
 
+## Project Structure
+
+src/
+├── pages/
+│   ├── Home.tsx     # Landing page with discipline navigation
+│   ├── VA.tsx       # Virtual Assistant page
+│   ├── Web3.tsx     # Web3 & DeFi page
+│   └── Dev.tsx      # Frontend Development page
+├── components/      # Reusable UI components
+└── assets/          # Images and static files
+
+---
+
+## What I Learned Building This
+
+- How to architect a multi-page React app with discipline-specific theming
+- Managing TypeScript strict mode across a growing component library
+- Tailwind gradient utilities and responsive layout patterns
+- Fixing useEffect dependency warnings and unused variable issues in production
+
+---
+
+## Contact
+
+Built by **Esther Israel Okon**
+🌐 [Portfolio](https://personal-portfolio-site-ten-rouge.vercel.app) 
+· 📩 estherisrael036@gmail.com 
+· 🐦 [@thesmarrtDev](https://twitter.com/thesmarrtDev)
